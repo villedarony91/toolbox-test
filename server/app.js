@@ -6,6 +6,8 @@ const NODE_ENV = process.env.NODE_ENV || "development";
 
 app.set("port", PORT);
 app.set("env", NODE_ENV);
+app.use(bodyParser.json());
+app.use("/", require("./api/v1/sendMessage"));
 
 /**
  * Handle not found request
