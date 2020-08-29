@@ -2,11 +2,13 @@ const express = require("express");
 const router = express.Router();
 
 const sendMessageBack = async (req, res, next) => {
-    res.sendStatus(200)
-}
+  try {
+    res.status(200).send(req.body);
+  } catch {
+    res.status(500);
+  }
+};
 
-router
-  .route("/api/v1/")
-  .get(sendMessageBack);
+router.route("/api/v1/").post(sendMessageBack);
 
 module.exports = router;
