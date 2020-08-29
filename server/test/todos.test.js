@@ -16,10 +16,10 @@ describe("API Integration Tests", function () {
         });
     });
     it("Test receive same message", function (done) {
-        const testJSON = { message: "Hello ToolBox"};
+      const testJSON = { message: "Hello ToolBox" };
       request(app)
         .post("/api/v1")
-        .set('Accept', 'application/json')
+        .set("Accept", "application/json")
         .send(testJSON)
         .end(function (err, res) {
           expect(res.statusCode).to.equal(200);
