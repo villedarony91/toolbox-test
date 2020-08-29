@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  node:
+    image: node:8
+    command: bash -c "npm install && npm run start"
+    volumes: 
+        - type: bind
+          source: ./server/
+          target: /usr/src/app
+    working_dir: /usr/src/app
+    ports:
+      - "3300:3000"
+    environment:
+      HOST: 0.0.0.0
