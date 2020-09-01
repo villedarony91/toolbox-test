@@ -2,6 +2,7 @@ version: "3.7"
 services:
   node:
     image: node:8
+    container_name: nodejs
     command: bash -c "npm install && npm run start"
     volumes: 
         - type: bind
@@ -9,6 +10,20 @@ services:
           target: /usr/src/app
     working_dir: /usr/src/app
     ports:
-      - "3300:3000"
+      - "3300:3300"
     environment:
       HOST: 0.0.0.0
+  react:
+      stdin_open: true
+      container_name: react
+      image: node:10
+      command: bash -c "npm install && npm run start"
+      volumes: 
+          - type: bind
+            source: ./client/
+            target: /usr/src/app
+      working_dir: /usr/src/app
+      ports:
+        - "3000:3000"
+      environment:
+        HOST: 0.0.0.0
