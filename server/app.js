@@ -1,8 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3300;
 const NODE_ENV = process.env.NODE_ENV || "development";
+const cors = require('cors')
+
+app.use(cors())
 
 app.set("port", PORT);
 app.set("env", NODE_ENV);
