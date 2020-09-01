@@ -54,7 +54,7 @@ const MessageForm = () => {
         <Form.Label id="top-label-receive">Message received</Form.Label>
         <Form.Control
           as="textarea"
-          placeholder="Enter your amazing message"
+          placeholder="Waiting to receive an amazing message"
           rows="3"
           id="message-received"
           value={messageState.messageReceived}
