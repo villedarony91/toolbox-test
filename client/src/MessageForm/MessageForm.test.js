@@ -11,5 +11,7 @@ describe("Test Message form", () => {
       expect(wrapper.find('#submit')).toHaveLength(1);
       expect(wrapper.find('#top-label')).toHaveLength(1);
       expect(wrapper.find('#message-to-send')).toHaveLength(1);
+      expect(wrapper.find('#top-label-receive')).toHaveLength(1);
+      expect(wrapper.find('#message-received')).toHaveLength(1);
   });
 });
